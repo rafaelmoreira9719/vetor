@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex2aula</title>
+</head>
+<body>
+
+    <input id="ipt_lugar" placeholder="Insira o destino">
+    <button onclick="adicionar()">Adicionar</button>
+    <br><br>
+    <button onclick="primeira()">Primeira viagem</button>
+    <button onclick="terceira()">Terceira viagem</button>
+    <button onclick="ultima()">Ultima</button>
+    <br><br>
+    <div id="msg"></div>
+    
+</body>
+</html>
+<script>
+
+var vt_destino = []; 
+function adicionar() {
+    vt_destino.push(ipt_lugar.value);
+    ipt_lugar.value = '';
+}
+
+function primeira() {
+    if (vt_destino.length >= 1) {
+        msg.innerHTML = `${vt_destino[0]}`;
+    } else {
+        msg.innerHTML = `Ainda não viajou!!!`;
+    }
+}
+
+function terceira() {
+    if (vt_destino.length >= 3) {
+        msg.innerHTML = `${vt_destino[2]}`;
+    } else {
+        msg.innerHTML = `Ainda não fez a terceira viagem!!!`;
+    }
+}
+
+function ultima() {
+    if (vt_destino.length >= 1) {
+        msg.innerHTML = `${vt_destino[vt_destino.length -1]}`;
+    } else {
+        msg.innerHTML = `Ainda não fez a ultima viagem!!!`;
+    }
+}
+</script>
